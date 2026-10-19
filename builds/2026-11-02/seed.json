@@ -1,0 +1,38 @@
+{
+  "seed": "2026-11-02",
+  "totalFontsInPool": 1958,
+  "domain": "pasar loak",
+  "layout": "papan pengumuman penuh stiker",
+  "reference": "koran kuning",
+  "constraint": "hanya garis tanpa fill",
+  "motion": {
+    "camera": "canvas drag + zoom scroll",
+    "marquee": "3 band beda kecepatan bertumpuk",
+    "text": "split huruf flip 3D",
+    "input": "hover mengubah tema seluruh halaman",
+    "reveal": "clip-path lingkaran"
+  },
+  "icons": {
+    "style": "outline tipis 1px",
+    "source": "Phosphor"
+  },
+  "fonts": {
+    "display": "Eagle Lake",
+    "body": "Istok Web",
+    "accent": "Piedra"
+  },
+  "palette": {
+    "mode": "light",
+    "harmony": "split-complementary",
+    "baseHue": 285,
+    "bg": "oklch(0.95 0.053 285)",
+    "surface": "oklch(0.90 0.040 285)",
+    "text": "oklch(0.20 0.040 285)",
+    "muted": "oklch(0.45 0.030 285)",
+    "accent": "oklch(0.68 0.162 75)",
+    "accent2": "oklch(0.64 0.196 135)",
+    "pop": "oklch(0.82 0.263 87)",
+    "note": "Draf. Wajib cek kontras AA dan rapikan lightness/chroma."
+  },
+  "buildDate": "2026-11-02"
+}

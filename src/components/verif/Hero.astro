@@ -1,0 +1,47 @@
+---
+import Icon from './icons.astro';
+---
+<div id="hero-pin">
+<section id="hero" aria-label="Pembuka loket" style="min-height:100svh;display:flex;flex-direction:column">
+  <div id="hero-inner" style="flex:1;display:flex;flex-direction:column">
+    <div class="wrap" style="width:100%">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 0;border-bottom:var(--rule)">
+        <p class="eyebrow" style="margin:0">Loket verifikasi lomba</p>
+        <p class="f-note" style="margin:0">No. 019 — buka 24 jam</p>
+      </div>
+    </div>
+
+    <div class="wrap" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.5rem;padding:3rem 0;width:100%">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap">
+        <h1 class="f-display" style="margin:0;max-width:9ch">Serahkan<br />tautanmu.</h1>
+        <button id="stopwatch" aria-label="Stopwatch loket. Klik lima kali untuk mode inspektur." style="background:none;border:none;cursor:pointer;padding:0" title="Klik 5× untuk mode inspektur">
+          <svg class="stopwatch" viewBox="0 0 120 140" role="img" aria-label="Stopwatch berdetak">
+            <rect x="48" y="4" width="24" height="10" fill="var(--ink)"/>
+            <rect x="56" y="14" width="8" height="12" fill="var(--ink)"/>
+            <circle cx="60" cy="78" r="46" fill="var(--paper)" stroke="var(--ink)" stroke-width="6"/>
+            {Array.from({length:12}).map((_,i)=>{const a=i*30*Math.PI/180;const x1=60+36*Math.cos(a),y1=78+36*Math.sin(a),x2=60+41*Math.cos(a),y2=78+41*Math.sin(a);return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--ink)" stroke-width={i%3===0?4:2}/>;})}
+            <line id="sw-hand" x1="60" y1="78" x2="60" y2="48" stroke="var(--accent)" stroke-width="5"/>
+            <circle cx="60" cy="78" r="6" fill="var(--ink)"/>
+            <circle cx="60" cy="78" r="20" fill="none" stroke="var(--pop)" stroke-width="3" stroke-dasharray="6 8"/>
+          </svg>
+        </button>
+      </div>
+      <p class="f-strong" style="margin:0;max-width:34ch">Tempel tautan info lomba. Mesin membedah strukturnya dan memberi stempel — sebelum kamu transfer atau daftar.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+        <a class="btn-loket" href="#loket">Periksa tautan <Icon name="arrow" /></a>
+        <p class="f-note" style="margin:0">↓ gulir untuk masuk ke ruang mesin</p>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" data-speed="46">
+        {[0,1].map(()=>(
+          <div class="marquee-band">
+            <span>Cek tautan</span><Icon name="link"/><span>Waspada scam</span><Icon name="warn"/><span>Deadline tercatat</span><Icon name="stopwatch"/><span>Stempel petugas</span><Icon name="stamp"/><span>Arsip rapi</span><Icon name="doc"/>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+</div>

@@ -1,0 +1,26 @@
+{
+  "domain": "jalur sepeda",
+  "layout": "horizontal scroll penuh",
+  "fonts": {
+    "display": "Metamorphous",
+    "body": "Scada",
+    "accent": "Playwrite ES Deco"
+  },
+  "palette": {
+    "mode": "dark",
+    "harmony": "triadic"
+  },
+  "motion": {
+    "camera": "zoom-through teks jadi pintu",
+    "marquee": "3 band beda kecepatan",
+    "text": "teks path melengkung",
+    "input": "hover ubah tema halaman",
+    "reveal": "clip-path lingkaran"
+  },
+  "icons": {
+    "style": "monoline satu garis menyambung"
+  },
+  "seed": "2026-10-11",
+  "buildDate": "2026-10-11",
+  "reference": "rekonstruisi-LOG"
+}

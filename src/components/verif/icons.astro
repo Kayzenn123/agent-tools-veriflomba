@@ -1,0 +1,26 @@
+---
+/* Ikon solid blocky digambar tangan — gaya seed 2026-10-19. 24x24, sudut tajam. */
+export interface Props { name: string; label?: string; cls?: string }
+const { name, label, cls = '' } = Astro.props;
+const P: Record<string, string> = {
+  // rantai tautan (custom domain)
+  link: '<path d="M9 15H7a4 4 0 0 1 0-8h2V4H7a7 7 0 0 0 0 14h2v-3zM15 9h2a4 4 0 0 1 0 8h-2v3h2a7 7 0 0 0 0-14h-2v3z"/><path d="M8 11h8v2H8z" transform="rotate(-45 12 12)"/>',
+  // stopwatch (custom domain)
+  stopwatch: '<circle cx="12" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 10v4l3 2" fill="none" stroke="currentColor" stroke-width="3"/><path d="M9 2h6v3H9zM12 5v2" />',
+  // stempel (custom domain)
+  stamp: '<path d="M10 2h4v6l3 5v3H7v-3l3-5z"/><path d="M4 18h16v6H4z"/>',
+  check: '<path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8 12.5l3 3 5-6.5" fill="none" stroke="currentColor" stroke-width="3"/>',
+  warn: '<path d="M12 3l10 18H2z"/><path d="M11 9h2v6h-2zM11 16.5h2v2h-2z" fill="var(--paper)"/>',
+  cross: '<path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="3"/>',
+  search: '<circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15.5 15.5L22 22" stroke="currentColor" stroke-width="4"/>',
+  doc: '<path d="M6 2h8l4 4v16H6z"/><path d="M14 2v4h4M9 12h6M9 15.5h6" stroke="currentColor" stroke-width="2" fill="none"/>',
+  calendar: '<path d="M4 6h16v14H4z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M4 10h16M8 2v5M16 2v5" stroke="currentColor" stroke-width="3"/>',
+  wallet: '<path d="M3 7h16v11H3z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M19 10h-4v4h4" /><path d="M3 7l2-4h12l2 4"/>',
+  phone: '<path d="M7 2h4l2 6-3 2 3 6 3-2 4 4v4l-6 2-9-9z"/>',
+  lock: '<path d="M7 11V8a5 5 0 0 1 10 0v3"/><path d="M5 11h14v10H5z"/>',
+  arrow: '<path d="M3 11h13V7l7 5-7 5v-4H3z"/>',
+  flag: '<path d="M6 2h2v20H6z"/><path d="M10 3h11l-3 4 3 4H10z"/>',
+};
+const inner = P[name] ?? P.search;
+---
+<svg class={cls} viewBox="0 0 24 24" fill="currentColor" aria-hidden={label ? undefined : 'true'} role={label ? 'img' : undefined} aria-label={label} focusable="false"><Fragment set:html={inner} /></svg>

@@ -1,0 +1,38 @@
+{
+  "seed": "2026-10-24",
+  "totalFontsInPool": 1958,
+  "domain": "stopwatch lomba 17-an",
+  "layout": "terminal interaktif",
+  "reference": "Swiss/International Style",
+  "constraint": "hanya 3 ukuran font",
+  "motion": {
+    "camera": "canvas drag + zoom scroll",
+    "marquee": "marquee ikon SVG + teks",
+    "text": "outline terisi saat scroll",
+    "input": "drag inertia flick",
+    "reveal": "morph SVG blob mask"
+  },
+  "icons": {
+    "style": "solid blocky",
+    "source": "custom hand-built SVG"
+  },
+  "fonts": {
+    "display": "Sofia",
+    "body": "Asul",
+    "accent": "Playwrite HU Guides"
+  },
+  "palette": {
+    "mode": "mid",
+    "harmony": "analogous",
+    "baseHue": 262,
+    "bg": "oklch(0.75 0.110 262)",
+    "surface": "oklch(0.60 0.110 262)",
+    "text": "oklch(0.16 0.030 262)",
+    "muted": "oklch(0.32 0.040 262)",
+    "accent": "oklch(0.67 0.272 292)",
+    "accent2": "oklch(0.58 0.255 232)",
+    "pop": "oklch(0.81 0.248 120)",
+    "note": "Draf. Wajib cek kontras AA dan rapikan lightness/chroma."
+  },
+  "buildDate": "2026-10-19"
+}

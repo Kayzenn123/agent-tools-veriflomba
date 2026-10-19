@@ -1,0 +1,25 @@
+---
+import Icon from './icons.astro';
+---
+<div class="marquee alt" aria-hidden="true" style="margin-top:2rem">
+  <div class="marquee-track" data-speed="-38">
+    {[0,1].map(()=>(
+      <div class="marquee-band">
+        <span>Loket tutup? Tidak pernah</span><Icon name="stopwatch"/><span>Verifikasi sebelum transfer</span><Icon name="check"/><span>Arsipkan buktimu</span><Icon name="doc"/><span>Lapor bila menemukan pola baru</span><Icon name="flag"/>
+      </div>
+    ))}
+  </div>
+</div>
+<footer class="wrap" style="padding:3.5rem 0 6rem" aria-label="Penutup">
+  <div class="rule-top" style="padding-top:2rem;display:grid;gap:1.5rem">
+    <p class="f-display" style="margin:0">VerifLomba</p>
+    <div style="display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+      <p style="max-width:44ch;margin:0">Loket verifikasi tautan info lomba. Seluruh pemeriksaan berjalan di perangkatmu — tidak ada data yang dikirim ke server mana pun.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start">
+        <a class="btn-ghost" href="#loket">Kembali ke loket</a>
+        <a class="btn-ghost" href="#pola">Lihat 16 pola</a>
+      </div>
+    </div>
+    <p class="f-note" style="margin:0;opacity:.75">Petugas loket 019 · pemeriksaan otomatis bukan pengganti verifikasi ke kanal resmi · dibuat dengan teliti, 2026</p>
+  </div>
+</footer>

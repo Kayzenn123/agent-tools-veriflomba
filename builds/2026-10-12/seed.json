@@ -1,0 +1,38 @@
+{
+  "seed": "2026-10-14",
+  "totalFontsInPool": 1958,
+  "domain": "kamus bahasa daerah",
+  "layout": "canvas pan/zoom dengan titik konten",
+  "reference": "game 8-bit",
+  "constraint": "tanpa gambar, murni tipografi dan bentuk",
+  "motion": {
+    "camera": "canvas drag + zoom scroll",
+    "marquee": "2 band arah berlawanan + skew velocity",
+    "text": "split huruf flip 3D",
+    "input": "magnetic + cursor shape-shift",
+    "reveal": "curtain wipe antar section"
+  },
+  "icons": {
+    "style": "duotone",
+    "source": "Iconoir"
+  },
+  "fonts": {
+    "display": "Kaisei Tokumin",
+    "body": "Chiron GoRound TC",
+    "accent": "Tilt Prism"
+  },
+  "palette": {
+    "mode": "mid",
+    "harmony": "monochrome",
+    "baseHue": 30,
+    "bg": "oklch(0.68 0.133 30)",
+    "surface": "oklch(0.60 0.110 30)",
+    "text": "oklch(0.16 0.030 30)",
+    "muted": "oklch(0.32 0.040 30)",
+    "accent": "oklch(0.74 0.199 30)",
+    "accent2": "oklch(0.56 0.196 30)",
+    "pop": "oklch(0.80 0.267 199)",
+    "note": "Draf. Wajib cek kontras AA dan rapikan lightness/chroma."
+  },
+  "buildDate": "2026-10-12"
+}

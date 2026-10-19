@@ -1,0 +1,39 @@
+---
+import Icon from './icons.astro';
+const POLA = [
+  ['link','Tautan dipendekkan','Tujuan asli disembunyikan di balik pemendek tautan. Minta tautan aslinya.'],
+  ['wallet','Transfer ke nama pribadi','Rekening tujuan atas nama perorangan, bukan organisasi penyelenggara.'],
+  ['doc','Biaya tak wajar','Pendaftaran jauh lebih mahal dari lomba sejenis untuk pelajar. Minta rincian resmi.'],
+  ['search','Penyelenggara tak terlacak','Nama organisasi tidak ditemukan di mana pun di luar tautan itu.'],
+  ['phone','Kontak cuma nomor pribadi','Tanpa email resmi, alamat, atau kanal organisasi yang bisa dihubungi.'],
+  ['warn','Desakan waktu','"Kuota terbatas, daftar sekarang" — agar kamu tidak sempat berpikir.'],
+  ['flag','Hadiah fantastis','Puluhan juta tanpa rincian mekanisme penjurian yang jelas.'],
+  ['stamp','Akun penyebar baru','Akun media sosial baru dibuat, tanpa riwayat kegiatan.'],
+  ['doc','Ejaan berantakan','Pengumuman "resmi" penuh salah ketik dan kalimat janggal.'],
+  ['lock','Diminta data sensitif','NIK, foto KTP, atau KK diminta di tahap awal pendaftaran.'],
+  ['link','Formulir anonim','Formulir tanpa identitas panitia yang bisa dihubungi.'],
+  ['calendar','Deadline tak jelas','Tanggal berubah-ubah atau tidak dicantumkan sama sekali.'],
+  ['check','Testimoni tanpa nama','Klaim pemenang/testimoni yang tidak bisa diverifikasi.'],
+  ['flag','Klaim dukungan palsu','"Didukung oleh" instansi terkenal tanpa bukti kerja sama.'],
+  ['warn','Syarat = sebar ke grup','Syarat utama lomba adalah menyebarkan info ke sejumlah grup.'],
+  ['cross','Pemenang tak diumumkan','Tidak ada pengumuman pemenang setelah lomba selesai.'],
+];
+---
+<section id="pola" class="wrap" aria-label="Pola lomba abal-abal" style="padding:4rem 0 5rem">
+  <p class="eyebrow">Pos 02 — Papan pengumuman</p>
+  <h2 class="fill-title f-strong" style="margin:.6rem 0 .8rem">
+    <span class="ghost" aria-hidden="true">16 pola yang sering dilaporkan</span><span class="solid" aria-hidden="true">16 pola yang sering dilaporkan</span><span class="sr-only">16 pola yang sering dilaporkan</span>
+  </h2>
+  <p style="max-width:60ch;margin:0 0 2.2rem">Pola umum dari laporan korban penipuan berkedok lomba — bukan tuduhan ke pihak mana pun. Kalau tiga atau lebih cocok dengan tautanmu, anggap bendera merah.</p>
+  <div style="display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
+    {POLA.map(([icon,t,d],i)=>(
+      <article class="pola-card" data-reveal>
+        <span class="no">{String(i+1).padStart(2,'0')}</span>
+        <Icon name={icon} cls="" />
+        <h3>{t}</h3>
+        <p>{d}</p>
+      </article>
+    ))}
+  </div>
+  <p class="f-note" style="margin-top:2rem">Dicatat petugas: pola di atas dirangkum dari keluhan umum di media sosial & forum pelajar, 2024–2026.</p>
+</section>

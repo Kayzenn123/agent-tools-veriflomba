@@ -1,0 +1,38 @@
+{
+  "seed": "2026-10-26",
+  "totalFontsInPool": 1958,
+  "domain": "warung tegal",
+  "layout": "timeline satu sumbu",
+  "reference": "sampul kaset",
+  "constraint": "satu ukuran biasa + satu ukuran raksasa",
+  "motion": {
+    "camera": "pan horizontal pinned + zoom per panel",
+    "marquee": "2 band arah berlawanan + skew velocity",
+    "text": "kata-kata jatuh lalu menumpuk",
+    "input": "drag inertia flick",
+    "reveal": "garis draw-on lalu isi"
+  },
+  "icons": {
+    "style": "pixel-art",
+    "source": "Bootstrap Icons"
+  },
+  "fonts": {
+    "display": "Noto Serif Grantha",
+    "body": "Hind Madurai",
+    "accent": "Hachi Maru Pop"
+  },
+  "palette": {
+    "mode": "mid",
+    "harmony": "complementary",
+    "baseHue": 34,
+    "bg": "oklch(0.70 0.138 34)",
+    "surface": "oklch(0.60 0.110 34)",
+    "text": "oklch(0.16 0.030 34)",
+    "muted": "oklch(0.32 0.040 34)",
+    "accent": "oklch(0.66 0.261 214)",
+    "accent2": "oklch(0.69 0.212 214)",
+    "pop": "oklch(0.87 0.250 242)",
+    "note": "Draf. Wajib cek kontras AA dan rapikan lightness/chroma."
+  },
+  "buildDate": "2026-10-18"
+}

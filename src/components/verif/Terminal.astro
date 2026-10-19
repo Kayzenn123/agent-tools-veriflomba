@@ -1,0 +1,98 @@
+---
+import Icon from './icons.astro';
+---
+<section id="loket" class="wrap" aria-label="Meja pemeriksaan" style="padding:5rem 0 4rem">
+  <p class="eyebrow">Pos 01 — Penyerahan dokumen</p>
+  <h2 class="fill-title f-strong" style="margin:.6rem 0 2rem">
+    <span class="ghost" aria-hidden="true">Meja pemeriksaan</span><span class="solid" aria-hidden="true">Meja pemeriksaan</span><span class="sr-only">Meja pemeriksaan</span>
+  </h2>
+
+  <div class="grid12">
+    <div style="grid-column:1/-1">
+      <form id="form-loket" class="terminal" novalidate>
+        <div class="terminal-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span style="margin-left:.5rem">loket-019 / formulir pemeriksaan</span></div>
+        <div style="padding:1.5rem;display:grid;gap:1.4rem">
+          <div class="field">
+            <label for="url">Tautan info lomba <span aria-hidden="true" style="color:var(--pop)">*</span></label>
+            <input id="url" name="url" type="url" inputmode="url" autocomplete="off" spellcheck="false"
+              placeholder="https://contoh.or.id/lomba-menulis-2026" aria-describedby="url-hint" required />
+            <p class="hint" id="url-hint">Tautan pendaftaran / pengumuman yang disebar di grup chat. Tidak dikirim ke mana pun — diperiksa di perangkatmu.</p>
+          </div>
+          <div class="field">
+            <label for="teks">Tempel teks pengumuman <span style="font-weight:400">(opsional)</span></label>
+            <textarea id="teks" placeholder="Salin isi pengumuman: deadline, biaya, kontak panitia…"></textarea>
+            <p class="hint">Mesin mencari tanggal, biaya, dan pola bahasa yang umum dipakai lomba abal-abal.</p>
+          </div>
+          <p id="form-error" class="field-error" role="alert" aria-live="assertive"></p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <button id="btn-periksa" class="btn-loket" type="submit" style="background:var(--pop);color:var(--ink)">Periksa tautan <Icon name="search" /></button>
+            <button id="btn-contoh" class="btn-ghost" type="button" style="border-color:var(--paper);color:var(--paper)">Coba contoh mencurigakan</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="hasil" style="grid-column:1/-1" hidden>
+      <div class="grid12" style="margin-top:2.5rem">
+        <div style="grid-column:span 12">
+          <div id="verdict-card" class="scorebox stamp-wrap" data-reveal>
+            <p class="eyebrow" style="margin:0 0 .5rem">Hasil pemeriksaan</p>
+            <div style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap">
+              <p style="margin:0"><span id="score-num" class="score-num">0</span><span class="f-strong">/100</span></p>
+              <div>
+                <p id="score-label" class="f-strong" style="margin:0 0 .8rem">—</p>
+                <span id="stamp" class="stamp" data-v="cek" style="opacity:0">Stempel: —</span>
+              </div>
+            </div>
+            <p class="f-note" id="arsip-count" style="margin:1rem 0 0">cek manual 0/4 — centang di bawah untuk menaikkan skor</p>
+          </div>
+        </div>
+        <div style="grid-column:span 12">
+          <div class="terminal" style="margin-top:1.5rem">
+            <div class="terminal-bar"><span style="margin-left:0">catatan mesin</span></div>
+            <div id="log" class="log" aria-label="Catatan pemeriksaan"></div>
+          </div>
+        </div>
+        <div style="grid-column:span 12">
+          <h3 class="f-strong" style="margin:2.2rem 0 1rem">Temuan</h3>
+          <div id="temuan" style="display:grid;gap:.9rem"></div>
+        </div>
+        <div style="grid-column:span 12">
+          <h3 class="f-strong" style="margin:2.2rem 0 1rem">Cek manual petugas <span style="font-weight:400">(masing-masing +5)</span></h3>
+          <div id="ceklist" style="display:grid;gap:.8rem"></div>
+        </div>
+        <div style="grid-column:span 12">
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem">
+            <button id="btn-salins" class="btn-ghost" type="button"><Icon name="doc" /> Salin laporan</button>
+            <button id="btn-unduh" class="btn-ghost" type="button"><Icon name="arrow" /> Unduh JSON</button>
+            <button id="btn-bagi" class="btn-ghost" type="button"><Icon name="link" /> Salin tautan hasil</button>
+          </div>
+          <p class="f-note" style="margin-top:1rem;opacity:.8">Pemeriksaan otomatis tidak menggantikan verifikasi ke kanal resmi penyelenggara.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="grid-column:1/-1;margin-top:3.5rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem">
+        <h3 class="f-strong" style="margin:0">Arsip pemeriksaan</h3>
+        <div style="display:flex;gap:.6rem">
+          <button class="btn-ghost" data-rail="prev" aria-label="Geser arsip ke kiri" style="padding:.6rem .9rem;min-height:44px">←</button>
+          <button class="btn-ghost" data-rail="next" aria-label="Geser arsip ke kanan" style="padding:.6rem .9rem;min-height:44px">→</button>
+        </div>
+      </div>
+      <div id="rail" class="rail" role="region" aria-label="Riwayat pemeriksaan, bisa digeser" tabindex="0">
+        <div id="rail-track" class="rail-track"></div>
+      </div>
+      <p id="riwayat-empty" class="f-note" style="margin-top:.8rem">Arsip kosong. Setiap pemeriksaan tersimpan di perangkatmu — tidak diunggah ke mana pun.</p>
+    </div>
+  </div>
+</section>
+<script>
+  // geser rel via keyboard saat fokus di rail
+  document.getElementById('rail')?.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      e.preventDefault();
+      document.querySelector(`[data-rail="${e.key === 'ArrowRight' ? 'next' : 'prev'}"]`)?.click();
+    }
+  });
+</script>

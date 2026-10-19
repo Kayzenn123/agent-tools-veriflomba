@@ -1,0 +1,26 @@
+{
+  "domain": "daftar harga bengkel",
+  "layout": "koran multi-kolom",
+  "fonts": {
+    "display": "Bricolage Grotesque",
+    "body": "IBM Plex Sans",
+    "accent": "IBM Plex Mono"
+  },
+  "palette": {
+    "mode": "light",
+    "harmony": "analogous"
+  },
+  "motion": {
+    "camera": "pan horizontal pinned",
+    "marquee": "marquee ikon+teks",
+    "text": "scramble",
+    "input": "tilt 3D",
+    "reveal": "curtain wipe"
+  },
+  "icons": {
+    "style": "outline tebal 3px sudut tajam"
+  },
+  "seed": "2026-10-10",
+  "buildDate": "2026-10-10",
+  "reference": "rekonstruisi-LOG"
+}

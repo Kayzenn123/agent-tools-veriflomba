@@ -1,0 +1,38 @@
+{
+  "seed": "2026-10-16",
+  "totalFontsInPool": 1958,
+  "domain": "kartu pos",
+  "layout": "spreadsheet sebagai UI",
+  "reference": "poster film lawas",
+  "constraint": "hanya garis tanpa fill",
+  "motion": {
+    "camera": "canvas drag + zoom scroll",
+    "marquee": "marquee vertikal di sisi layar",
+    "text": "outline terisi saat scroll",
+    "input": "hover mengubah tema seluruh halaman",
+    "reveal": "garis draw-on lalu isi"
+  },
+  "icons": {
+    "style": "isometrik",
+    "source": "Tabler"
+  },
+  "fonts": {
+    "display": "Candal",
+    "body": "Puritan",
+    "accent": "Freehand"
+  },
+  "palette": {
+    "mode": "light",
+    "harmony": "triadic",
+    "baseHue": 104,
+    "bg": "oklch(0.96 0.037 104)",
+    "surface": "oklch(0.90 0.040 104)",
+    "text": "oklch(0.20 0.040 104)",
+    "muted": "oklch(0.45 0.030 104)",
+    "accent": "oklch(0.63 0.266 224)",
+    "accent2": "oklch(0.62 0.173 344)",
+    "pop": "oklch(0.82 0.200 321)",
+    "note": "Draf. Wajib cek kontras AA dan rapikan lightness/chroma."
+  },
+  "buildDate": "2026-10-16"
+}

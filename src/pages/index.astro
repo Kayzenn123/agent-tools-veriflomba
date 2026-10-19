@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/verif/Hero.astro';
+import Terminal from '../components/verif/Terminal.astro';
+import Pola from '../components/verif/Pola.astro';
+import Penutup from '../components/verif/Penutup.astro';
+import '../styles/verif.css';
+
+const metadata = {
+  title: 'VerifLomba — Loket Verifikasi Tautan Lomba',
+  description: 'Loket pemeriksaan tautan info lomba: bedah URL dan teks pengumuman, tandai indikasi scam, sebelum kamu transfer atau daftar.',
+};
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'VerifLomba',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  inLanguage: 'id',
+  description: metadata.description,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'IDR' },
+};
+---
+<Layout metadata={metadata}>
+  <Fragment slot="head">
+    <meta name="theme-color" content="#b9a8ec" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </Fragment>
+
+  <a class="skip" href="#loket">Lompat ke meja pemeriksaan</a>
+  <p id="live" class="sr-only" role="status" aria-live="polite"></p>
+
+  <!-- sprite ikon untuk temuan yang dirender JS -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="vl-i-check" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8 12.5l3 3 5-6.5" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
+      <symbol id="vl-i-warn" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M11 9h2v6h-2zM11 16.5h2v2h-2z" fill="#fff"/></symbol>
+      <symbol id="vl-i-cross" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="currentColor" stroke-width="3"/></symbol>
+      <symbol id="vl-i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M15.5 15.5L22 22" stroke="currentColor" stroke-width="4"/></symbol>
+    </defs>
+  </svg>
+
+  <div id="pintu" class="pintu" aria-hidden="true"><div class="ring"></div></div>
+
+  <main id="main" class="grain">
+    <Hero />
+    <Terminal />
+    <Pola />
+    <Penutup />
+  </main>
+
+  <button id="gerak-toggle" class="gerak-toggle" aria-pressed="true">Gerak: nyala</button>
+</Layout>
+
+<script>
+  import { initTerminal } from '../scripts/terminal.js';
+  import { initMotion } from '../scripts/motion.js';
+  initTerminal();
+  // gerak diinisialisasi setelah load agar tidak menaikkan TBT
+  if (document.readyState === 'complete') initMotion();
+  else window.addEventListener('load', initMotion, { once: true });
+</script>

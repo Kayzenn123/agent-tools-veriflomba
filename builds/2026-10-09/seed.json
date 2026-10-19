@@ -1,0 +1,26 @@
+{
+  "domain": "struk belanja",
+  "layout": "spreadsheet sebagai UI",
+  "fonts": {
+    "display": "IBM Plex Mono",
+    "body": "IBM Plex Sans",
+    "accent": "Space Mono"
+  },
+  "palette": {
+    "mode": "light",
+    "harmony": "monochrome"
+  },
+  "motion": {
+    "camera": "zoom in+pan",
+    "marquee": "2 band berlawanan",
+    "text": "flip huruf",
+    "input": "magnetic",
+    "reveal": "clip lingkaran"
+  },
+  "icons": {
+    "style": "outline tipis 1px"
+  },
+  "seed": "2026-10-09",
+  "buildDate": "2026-10-09",
+  "reference": "rekonstruisi-LOG"
+}

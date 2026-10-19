@@ -1,0 +1,50 @@
+---
+// Font family is provided by Astro's native Fonts API (see `fonts` in
+// astro.config.ts and <Font /> in Layout.astro), exposed as `--font-inter`.
+// To switch typefaces, change the `fonts` entry and repoint `--aw-font-*` below.
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: var(--font-asul);
+    --aw-font-serif: var(--font-asul);
+    --aw-font-heading: var(--font-asul);
+
+    /* VerifLomba — loket verifikasi (seed 2026-10-19, mid/analogous hue 262) */
+    --aw-color-primary: oklch(0.55 0.22 292);
+    --aw-color-secondary: oklch(0.5 0.21 232);
+    --aw-color-accent: oklch(0.81 0.248 120);
+
+    --aw-color-text-heading: oklch(0.16 0.03 262);
+    --aw-color-text-default: oklch(0.16 0.03 262);
+    --aw-color-text-muted: oklch(0.32 0.04 262);
+    --aw-color-bg-page: oklch(0.75 0.11 262);
+
+    --aw-color-bg-page-dark: oklch(0.16 0.03 262);
+
+    ::selection {
+      background-color: oklch(0.81 0.248 120);
+      color: oklch(0.16 0.03 262);
+    }
+  }
+
+  .dark {
+    --aw-font-sans: var(--font-asul);
+    --aw-font-serif: var(--font-asul);
+    --aw-font-heading: var(--font-asul);
+
+    --aw-color-primary: oklch(0.55 0.22 292);
+    --aw-color-secondary: oklch(0.5 0.21 232);
+    --aw-color-accent: oklch(0.81 0.248 120);
+
+    --aw-color-text-heading: oklch(0.93 0.02 262);
+    --aw-color-text-default: oklch(0.93 0.02 262);
+    --aw-color-text-muted: oklch(0.93 0.02 262 / 66%);
+    --aw-color-bg-page: oklch(0.16 0.03 262);
+
+    ::selection {
+      background-color: oklch(0.81 0.248 120);
+      color: oklch(0.16 0.03 262);
+    }
+  }
+</style>

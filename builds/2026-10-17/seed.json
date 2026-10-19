@@ -1,0 +1,38 @@
+{
+  "seed": "2026-10-19",
+  "totalFontsInPool": 1958,
+  "domain": "kartu pos",
+  "layout": "timeline satu sumbu",
+  "reference": "poster film lawas",
+  "constraint": "hanya 3 ukuran font",
+  "motion": {
+    "camera": "parallax 5 layer + zoom out di akhir",
+    "marquee": "marquee vertikal di sisi layar",
+    "text": "scramble/decode",
+    "input": "tilt 3D pointer/gyro",
+    "reveal": "GSAP Flip layout"
+  },
+  "icons": {
+    "style": "hand-drawn goyang (feTurbulence)",
+    "source": "Remix"
+  },
+  "fonts": {
+    "display": "Sassy Frass",
+    "body": "Commissioner",
+    "accent": "Comic Neue"
+  },
+  "palette": {
+    "mode": "mid",
+    "harmony": "triadic",
+    "baseHue": 323,
+    "bg": "oklch(0.72 0.142 323)",
+    "surface": "oklch(0.60 0.110 323)",
+    "text": "oklch(0.16 0.030 323)",
+    "muted": "oklch(0.32 0.040 323)",
+    "accent": "oklch(0.70 0.199 83)",
+    "accent2": "oklch(0.64 0.190 203)",
+    "pop": "oklch(0.79 0.212 165)",
+    "note": "Draf. Wajib cek kontras AA dan rapikan lightness/chroma."
+  },
+  "buildDate": "2026-10-17"
+}
