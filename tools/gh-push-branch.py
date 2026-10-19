@@ -60,13 +60,26 @@ def main():
 
     ref = call("GET", f"/repos/{OWNER}/{repo}/git/ref/heads/{branch}")
     base, base_tree = None, None
-    if ref.get("_error") in (404, 409):
+    if ref.get("_error") in (404, 409) and branch == "main":
         print("repo kosong — seed via Contents API")
         seed = call("PUT", f"/repos/{OWNER}/{repo}/contents/.gitkeep",
                     {"message": "init", "content": "",
                      "committer": AUTHOR, "author": AUTHOR})
         if seed.get("_error"):
             die("seed", seed)
+        ref = call("GET", f"/repos/{OWNER}/{repo}/git/ref/heads/{branch}")
+        base = ref["object"]["sha"]
+        c0 = call("GET", f"/repos/{OWNER}/{repo}/git/commits/{base}")
+        base_tree = c0["tree"]["sha"]
+    elif ref.get("_error") in (404, 409):
+        print(f"branch {branch} belum ada — buat dari main")
+        mref = call("GET", f"/repos/{OWNER}/{repo}/git/ref/heads/main")
+        if mref.get("_error"):
+            die("cek main", mref)
+        cr = call("POST", f"/repos/{OWNER}/{repo}/git/refs",
+                  {"ref": f"refs/heads/{branch}", "sha": mref["object"]["sha"]})
+        if cr.get("_error"):
+            die("buat branch", cr)
         ref = call("GET", f"/repos/{OWNER}/{repo}/git/ref/heads/{branch}")
         base = ref["object"]["sha"]
         c0 = call("GET", f"/repos/{OWNER}/{repo}/git/commits/{base}")

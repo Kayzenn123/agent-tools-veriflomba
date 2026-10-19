@@ -49,10 +49,12 @@ function scrollLoop() {
       inner.style.transform = `scale(${(1 + p * 1.1).toFixed(3)})`;
       inner.style.opacity = (1 - p * 0.88).toFixed(3);
       if (pintu && ring) {
-        const q = clamp((p - 0.3) / 0.7, 0, 1);
+        // amplop segitiga: pintu mengembang (0.30→0.62) lalu memudar (0.62→1.0)
+        // agar TIDAK menutupi layar setelah transisi selesai
+        const q = p < 0.3 ? 0 : p < 0.62 ? (p - 0.3) / 0.32 : Math.max(0, 1 - (p - 0.62) / 0.38);
         pintu.style.opacity = q.toFixed(3);
-        pintu.style.visibility = q > 0 ? 'visible' : 'hidden';
-        ring.style.transform = `scale(${(0.25 + q * 2.95).toFixed(3)})`;
+        pintu.style.visibility = q > 0.01 ? 'visible' : 'hidden';
+        ring.style.transform = `scale(${(0.25 + Math.min(q * 1.4, 1) * 2.95).toFixed(3)})`;
       }
     }
     if (moved && fillTops) {

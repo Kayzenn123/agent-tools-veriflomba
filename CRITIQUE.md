@@ -65,6 +65,13 @@ Karakter **9** | Keunikan **8** | Kerapian **8**. Karakter & keunikan ≥ 8 — 
 - Suara mikro: tidak dipakai (fokus gerak).
 - Mode gelap: konsep mengunci satu palet institusional (mid lavender); dicatat.
 
+## Catatan lingkungan
+- `tools/qa.cjs` terhadap URL live GAGAL di VM (Playwright Chromium:
+  `net::ERR_TUNNEL_CONNECTION_FAILED` — egress proxy VM mencegat, bukan salah web).
+  Pengganti setara: verifikasi live via browser task (hasil di bawah) + qa.js lokal
+  lolos penuh + HTTP 200 via curl.
+- Hasil browser task live: _menunggu hasil_ (dilaporkan saat tiba).
+
 ## Putaran rombak
 - Ronde 1: ikon pola raksasa → 2rem; layout desktop → 2 kolom; stopwatch hand
   svgOrigin; grain fixed → absolute (FPS 48→60).
