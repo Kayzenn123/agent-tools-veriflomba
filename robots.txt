@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://kayzenn123.github.io/agent-tools-veriflomba/sitemap-index.xml
+Sitemap: https://kayzenn123.github.io/sitemap-index.xml
